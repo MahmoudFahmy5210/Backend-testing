@@ -2,11 +2,15 @@ import  express  from "express";
 //= const express = require("express")
 import bodyParser from "body-parser";
 
+import usersRouter from './routes/users.js';
+
 const app = express();
 
 const PORT = 5000;
 
 app.use(bodyParser.json());//this means we will use data in our app in json format
+
+app.use('/users',usersRouter);
 
 //"/" means home page 
 // note : when you go to google you do (get) 
